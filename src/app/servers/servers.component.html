@@ -24,3 +24,15 @@
 <p>{{ userName }}</p>
 <button [disabled]="!userName" (click)="resetUser()">Reset user</button>
 <app-server *ngFor="let server of servers"></app-server>
+
+<button (click)="toggleSecret($event)">Toggle secret</button>
+<p *ngIf="secretIsVisible">The secret password is: Ofinger</p>
+<li
+  *ngFor="let time of eventLog"
+  [ngStyle]="{
+    backgroundColor: eventLog.indexOf(time) >= 5 ? 'royalblue' : '',
+    color: eventLog.indexOf(time) >= 5 ? 'white' : ''
+  }"
+>
+  Events occured at: {{ time }}
+</li>

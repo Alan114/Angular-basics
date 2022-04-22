@@ -12,6 +12,8 @@ export class ServersComponent implements OnInit {
   userName = '';
   serverCreated = false;
   servers = ['Testserver', 'Testserver 2'];
+  secretIsVisible = false;
+  eventLog = [];
 
   constructor() {
     setTimeout(() => {
@@ -34,5 +36,10 @@ export class ServersComponent implements OnInit {
 
   resetUser() {
     this.userName = '';
+  }
+
+  toggleSecret(event: any) {
+    this.secretIsVisible = !this.secretIsVisible;
+    this.eventLog.push(event.timeStamp);
   }
 }
