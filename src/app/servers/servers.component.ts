@@ -38,8 +38,8 @@ export class ServersComponent implements OnInit {
     this.userName = '';
   }
 
-  toggleSecret(event: any) {
+  toggleSecret() {
     this.secretIsVisible = !this.secretIsVisible;
-    this.eventLog.push(event.timeStamp);
+    this.eventLog.push(new Date());
   }
 }
